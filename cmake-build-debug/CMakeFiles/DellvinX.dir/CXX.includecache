@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dellv/projects/test/conf/config.h
+/home/dellvin/Desktop/HighLoad_DZ2/conf/config.h
 cstdint
 -
 cstdint
@@ -32,14 +32,12 @@ stdio.h
 stdlib.h
 -
 
-/home/dellv/projects/test/server/Server.cpp
+/home/dellvin/Desktop/HighLoad_DZ2/server/Server.cpp
 Server.h
-/home/dellv/projects/test/server/Server.h
+/home/dellvin/Desktop/HighLoad_DZ2/server/Server.h
 ../conf/config.h
-/home/dellv/projects/test/conf/config.h
+/home/dellvin/Desktop/HighLoad_DZ2/conf/config.h
 sstream
--
-iomanip
 -
 ctime
 -
@@ -47,12 +45,12 @@ fstream
 -
 algorithm
 -
-filesystem
+experimental/filesystem
 -
 unistd.h
 -
 
-/home/dellv/projects/test/server/Server.h
+/home/dellvin/Desktop/HighLoad_DZ2/server/Server.h
 cstdint
 -
 iostream

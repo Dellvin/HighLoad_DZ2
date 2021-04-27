@@ -5,9 +5,6 @@
 #include <sstream>
 #include <string>
 
-
-
-
 int main() {
     std::cout << "Starting" << std::endl;
     Server s(8080);

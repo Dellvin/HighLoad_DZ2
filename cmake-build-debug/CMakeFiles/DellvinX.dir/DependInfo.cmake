@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/dellv/projects/test/main.cpp" "/home/dellv/projects/test/cmake-build-debug/CMakeFiles/DellvinX.dir/main.cpp.o"
-  "/home/dellv/projects/test/server/Server.cpp" "/home/dellv/projects/test/cmake-build-debug/CMakeFiles/DellvinX.dir/server/Server.cpp.o"
+  "/home/dellvin/Desktop/HighLoad_DZ2/main.cpp" "/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/CMakeFiles/DellvinX.dir/main.cpp.o"
+  "/home/dellvin/Desktop/HighLoad_DZ2/server/Server.cpp" "/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/CMakeFiles/DellvinX.dir/server/Server.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
