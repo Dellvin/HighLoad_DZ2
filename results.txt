@@ -1,0 +1,118 @@
+wrk -t256 -c256 -d10s --timeout 2s http://localhost:8080/httptest/dir1/dir12/dir123/deep.txt
+
+ 1 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    37.21ms   18.16ms 144.94ms   70.38%
+    Req/Sec     5.21k     1.67k    9.44k    63.49%
+  32710 requests in 10.08s, 4.96MB read
+  Socket errors: connect 0, read 200, write 108959, timeout 0
+Requests/sec:   3243.66
+Transfer/sec:    503.64KB
+
+  2 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    35.36ms   21.65ms 193.88ms   75.06%
+    Req/Sec     2.76k   821.40     4.51k    61.86%
+  32518 requests in 10.07s, 4.93MB read
+  Socket errors: connect 0, read 220, write 212767, timeout 0
+Requests/sec:   3228.99
+Transfer/sec:    501.36KB
+
+ 3 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    26.39ms   14.62ms 125.92ms   74.06%
+    Req/Sec     2.43k   526.11     4.11k    65.19%
+  32703 requests in 10.05s, 4.96MB read
+  Socket errors: connect 0, read 199, write 451274, timeout 0
+Requests/sec:   3255.20
+Transfer/sec:    505.42KB
+
+4 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.53ms   16.63ms 174.96ms   73.12%
+    Req/Sec     1.71k   387.45     2.52k    71.20%
+  32553 requests in 10.07s, 4.94MB read
+  Socket errors: connect 0, read 252, write 555394, timeout 0
+Requests/sec:   3232.14
+Transfer/sec:    501.82KB
+
+  5 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.98ms   20.44ms 176.92ms   74.67%
+    Req/Sec     1.21k   311.70     2.20k    73.70%
+  32511 requests in 10.09s, 4.93MB read
+  Socket errors: connect 0, read 280, write 468611, timeout 0
+Requests/sec:   3220.53
+Transfer/sec:    500.03KB
+
+  6 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.59ms   17.70ms 174.12ms   74.89%
+    Req/Sec     1.13k   263.57     1.66k    70.83%
+  32589 requests in 10.09s, 4.94MB read
+  Socket errors: connect 0, read 239, write 580461, timeout 0
+Requests/sec:   3228.85
+Transfer/sec:    501.33KB
+
+  7 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.53ms   15.06ms 133.18ms   73.13%
+    Req/Sec     0.97k   177.00     1.64k    70.54%
+  32539 requests in 10.09s, 4.93MB read
+  Socket errors: connect 0, read 260, write 508650, timeout 0
+Requests/sec:   3224.30
+Transfer/sec:    500.61KB
+
+  8 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.92ms   18.27ms 214.15ms   74.43%
+    Req/Sec     0.85k   205.53     1.46k    68.75%
+  32648 requests in 10.10s, 4.95MB read
+  Socket errors: connect 0, read 218, write 510633, timeout 0
+Requests/sec:   3233.43
+Transfer/sec:    502.02KB
+
+  16 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    30.59ms   19.45ms 172.65ms   71.53%
+    Req/Sec   385.61     96.90   720.00     74.14%
+  32628 requests in 10.10s, 4.95MB read
+  Socket errors: connect 0, read 259, write 486544, timeout 0
+Requests/sec:   3230.81
+Transfer/sec:    501.62KB
+
+  32 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    35.53ms   26.22ms 237.57ms   77.39%
+    Req/Sec   169.82     60.90   400.00     70.28%
+  32626 requests in 10.09s, 4.95MB read
+  Socket errors: connect 0, read 226, write 438201, timeout 0
+Requests/sec:   3232.28
+Transfer/sec:    501.85KB
+
+  64 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    29.94ms   20.21ms 207.02ms   72.43%
+    Req/Sec    99.74     26.82   230.00     69.06%
+  32576 requests in 10.10s, 4.94MB read
+  Socket errors: connect 0, read 319, write 513801, timeout 0
+Requests/sec:   3225.29
+Transfer/sec:    500.76KB
+
+  128 threads and 200 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.05ms   16.10ms 160.19ms   69.11%
+    Req/Sec    44.80     17.36   151.00     77.79%
+  32591 requests in 10.10s, 4.94MB read
+  Socket errors: connect 0, read 242, write 385748, timeout 0
+Requests/sec:   3226.80
+Transfer/sec:    501.00KB
+
+  256 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    47.43ms   32.09ms 305.57ms   69.46%
+    Req/Sec    21.27     10.62   138.00     60.62%
+  32457 requests in 10.10s, 4.92MB read
+  Socket errors: connect 0, read 433, write 382307, timeout 0
+Requests/sec:   3214.11
+Transfer/sec:    499.04KB
