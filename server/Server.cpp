@@ -22,22 +22,22 @@ Server::Server(uint32_t port) {
 }
 
 int Server::start() {
-//    signal(SIGPIPE,SIGIGN)
+    signal(SIGPIPE,SIG_IGN);
     struct sockaddr_in server{};
     server.sin_addr.s_addr = INADDR_ANY;
-    server.sin_port = htons( _port );
+    server.sin_port = htons(_port);
     server.sin_family = AF_INET;
-    listen_socket=socket(AF_INET, SOCK_STREAM, 0);
-    if (listen_socket==-1){
-        std::cerr<< "Error creating socket:" <<listen_socket<<std::endl;
+    listen_socket = socket(AF_INET, SOCK_STREAM, 0);
+    if (listen_socket == -1) {
+        std::cerr << "Error creating socket:" << listen_socket << std::endl;
         return -1;
     }
-    if(bind(listen_socket,(struct sockaddr *)&server , sizeof(server)) < 0) {
-        std::cerr<< "Error binding:" <<listen_socket<<std::endl;
+    if (bind(listen_socket, (struct sockaddr *) &server, sizeof(server)) < 0) {
+        std::cerr << "Error binding:" << listen_socket << std::endl;
         return -1;
     }
-    if(listen(listen_socket, SOMAXCONN) < 0){
-        std::cerr<< "Error listening:" <<listen_socket<<std::endl;
+    if (listen(listen_socket, SOMAXCONN) < 0) {
+        std::cerr << "Error listening:" << listen_socket << std::endl;
         return -1;
     }
     int err = mainLoop();
@@ -49,14 +49,14 @@ int Server::start() {
 
 [[noreturn]] int Server::mainLoop() {
     while (true) {
-        int client_socket = accept(listen_socket, nullptr, nullptr);
-        if (client_socket == -1) {
-            std::cerr << "accept failed: " << client_socket << "\n";
-            close(listen_socket);
+        int *client_socket=(int *)malloc(sizeof(int));
+        *client_socket = accept(listen_socket, nullptr, nullptr);
+        if (*client_socket == -1) {
+            std::cerr << "accept failed: " << *client_socket << "\n";
+            continue;
         }
-            pthread_t rec;
-            pthread_create (&rec, nullptr, Server::handleClient, (void*)&client_socket);
-            std::cout<<"OK"<<std::endl;
+        pthread_t rec;
+        pthread_create(&rec, nullptr, Server::handleClient, (void *) client_socket);
     }
 }
 
@@ -64,17 +64,18 @@ Server::~Server() {
     close(listen_socket);
 }
 
-void *Server::handleClient(void* x) {
-    int client_socket=*(int *)x;
+void *Server::handleClient(void *x) {
+    int client_socket = *(int *) x;
     std::string buf;
     buf.resize(BUFF_SIZE);
     std::string resp = "HTTP/1.1 ";
     std::string contentType;
     int64_t err = recv(client_socket, (char *) buf.c_str(), BUFF_SIZE, 0);
     if (err == -1) {
-        std::cerr << "Error while reading for '" << client_socket << "': " << err << std::endl;
+        std::cerr << client_socket;
+        free (x);
         close(client_socket);
-        return nullptr;
+        pthread_exit(0);
     }
     if (checkMethod(buf)) {
         resp += "405 Method Not Allowed\r\n";
@@ -83,14 +84,15 @@ void *Server::handleClient(void* x) {
         response resp_struct = getResp(buf);
         resp += resp_struct.description;
         setHeaders(resp, resp_struct.len, resp_struct.type);
-        if (buf.find("GET")==0){
+        if (buf.find("GET") == 0) {
             resp += resp_struct.file;
         }
     }
 //    std::cout<<resp<<std::endl;
     send(client_socket, resp.c_str(), resp.size(), 0);
-    close(client_socket);
-    return nullptr;
+    err = close(client_socket);
+    free (x);
+    pthread_exit(0);
 }
 
 int Server::checkMethod(std::string &req) {
@@ -112,34 +114,34 @@ void Server::setHeaders(std::string &resp, uint32_t contentLen, std::string &con
     if (contentLen) {
         resp += "Content-Length: " + std::to_string(contentLen) + "\r\n";
     }
-    resp+="\r\n";
+    resp += "\r\n";
 }
 
 std::string urlDecode(std::string &SRC) {
     std::string ret;
     char ch;
     int i, ii;
-    for (i=0; i<SRC.length(); i++) {
-        if (int(SRC[i])==37) {
-            sscanf(SRC.substr(i+1,2).c_str(), "%x", &ii);
-            ch=static_cast<char>(ii);
-            ret+=ch;
-            i=i+2;
+    for (i = 0; i < SRC.length(); i++) {
+        if (int(SRC[i]) == 37) {
+            sscanf(SRC.substr(i + 1, 2).c_str(), "%x", &ii);
+            ch = static_cast<char>(ii);
+            ret += ch;
+            i = i + 2;
         } else {
-            ret+=SRC[i];
+            ret += SRC[i];
         }
     }
     return (ret);
 }
 
-bool isSmthIndir(std::string& path){
+bool isSmthIndir(std::string &path) {
     try {
-        for (const auto & entry : std::filesystem::directory_iterator(path))
+        for (const auto &entry : std::filesystem::directory_iterator(path))
             break;
     } catch (...) {
         return false;
     }
-    for (const auto & entry : std::filesystem::directory_iterator(path)){
+    for (const auto &entry : std::filesystem::directory_iterator(path)) {
 //        std::cout << entry.path() << std::endl;
         return true;
     }
@@ -149,8 +151,8 @@ bool isSmthIndir(std::string& path){
 response Server::getResp(std::string &req) {
     response resp;
     std::string path = getPath(req);
-    if(path[path.size()-1]=='/'){
-        if(!isSmthIndir(path)){
+    if (path[path.size() - 1] == '/') {
+        if (!isSmthIndir(path)) {
             resp.description = "404 Not Found\r\n";
             resp.len = 0;
             resp.file.clear();
@@ -162,7 +164,7 @@ response Server::getResp(std::string &req) {
         resp.description = "404 Not Found\r\n";
         resp.len = 0;
         resp.type = "";
-    }else{
+    } else {
         resp.len = resp.file.size();
         resp.description = "200 OK\r\n";
     }
@@ -177,16 +179,16 @@ response Server::getResp(std::string &req) {
 }
 
 std::string Server::getPath(std::string &req) {
-    auto from = req.find(' ')+1;
-    std::string path="../static";
-    auto to=req.find(' ', from);
-    if (to>req.find('?', from)){
-        to=req.find('?', from);
+    auto from = req.find(' ') + 1;
+    std::string path = "../static";
+    auto to = req.find(' ', from);
+    if (to > req.find('?', from)) {
+        to = req.find('?', from);
     }
     for (uint16_t i = from; i < to; i++) {
         path += req[i];
     }
-    path=urlDecode(path);
+    path = urlDecode(path);
     if (path[path.size() - 1] == '/') {
         std::vector<std::string> files;
         try {
@@ -196,20 +198,20 @@ std::string Server::getPath(std::string &req) {
             return path;
         }
 
-        for (const auto & entry : std::filesystem::directory_iterator(path)){
+        for (const auto &entry : std::filesystem::directory_iterator(path)) {
 //            std::cout << entry.path() << std::endl;
             files.push_back(entry.path().string());
         }
-        std::string first=files[0];
-        for (const auto &path:files){
-            if(path[0]<first[0]) first=path;
-            else if(path[0]>first[0]) continue;
+        std::string first = files[0];
+        for (const auto &path:files) {
+            if (path[0] < first[0]) first = path;
+            else if (path[0] > first[0]) continue;
             else {
-                for(size_t i=0;i<path.size();++i){
-                    if (i>=first.size()) break;
-                    else if(path[i]>first[i])break;
-                    else if(path[i]<first[i]){
-                        first=path;
+                for (size_t i = 0; i < path.size(); ++i) {
+                    if (i >= first.size()) break;
+                    else if (path[i] > first[i])break;
+                    else if (path[i] < first[i]) {
+                        first = path;
                         break;
                     }
                 }
@@ -226,7 +228,7 @@ std::string Server::getType(std::string &path) {
         if (path[i] == '.') {
             break;
         }
-        type+= path[i];
+        type += path[i];
     }
     std::reverse(type.begin(), type.end());
     if (type == "txt")
@@ -264,8 +266,7 @@ std::string Server::getContent(std::string &path, std::string &read) {
     return read;
 }
 
-void Server::error(const char *msg)
-{
+void Server::error(const char *msg) {
     perror(msg);
     exit(1);
 }

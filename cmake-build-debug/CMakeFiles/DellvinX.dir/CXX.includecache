@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dellvin/Desktop/HighLoad_DZ2/conf/config.h
+/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/conf/config.h
 cstdint
 -
 cstdint
@@ -32,11 +32,11 @@ stdio.h
 stdlib.h
 -
 
-/home/dellvin/Desktop/HighLoad_DZ2/server/Server.cpp
+/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/server/Server.cpp
 Server.h
-/home/dellvin/Desktop/HighLoad_DZ2/server/Server.h
+/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/server/Server.h
 ../conf/config.h
-/home/dellvin/Desktop/HighLoad_DZ2/conf/config.h
+/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/conf/config.h
 sstream
 -
 ctime
@@ -52,7 +52,7 @@ unistd.h
 signal.h
 -
 
-/home/dellvin/Desktop/HighLoad_DZ2/server/Server.h
+/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/server/Server.h
 cstdint
 -
 iostream

@@ -8,93 +8,91 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug"/>
+				<Option working_dir="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug"/>
+				<Option working_dir="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug"/>
+				<Option working_dir="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DellvinX">
-				<Option output="/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/DellvinX" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug"/>
+				<Option output="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/cmake-build-debug/DellvinX" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 DellvinX"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 DellvinX"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DellvinX/fast">
-				<Option output="/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/DellvinX" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug"/>
+				<Option output="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/cmake-build-debug/DellvinX" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 DellvinX/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/dellvin/Desktop/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 DellvinX/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/dellvin/Desktop/Технопарк/Семестр\ 3/HighLoad/HighLoad_DZ2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/dellvin/Desktop/HighLoad_DZ2/conf/config.h">
+		<Unit filename="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/conf/config.h">
 			<Option target="DellvinX"/>
 		</Unit>
-		<Unit filename="/home/dellvin/Desktop/HighLoad_DZ2/main.cpp">
+		<Unit filename="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/main.cpp">
 			<Option target="DellvinX"/>
 		</Unit>
-		<Unit filename="/home/dellvin/Desktop/HighLoad_DZ2/server/Server.cpp">
+		<Unit filename="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/server/Server.cpp">
 			<Option target="DellvinX"/>
 		</Unit>
-		<Unit filename="/home/dellvin/Desktop/HighLoad_DZ2/server/Server.h">
+		<Unit filename="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/server/Server.h">
 			<Option target="DellvinX"/>
 		</Unit>
-		<Unit filename="/home/dellvin/Desktop/HighLoad_DZ2/CMakeLists.txt">
+		<Unit filename="/Users/dellvin/Desktop/Технопарк/Семестр 3/HighLoad/HighLoad_DZ2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

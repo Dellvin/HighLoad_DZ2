@@ -9,6 +9,5 @@ int main() {
     std::cout << "Starting" << std::endl;
     Server s(8080);
     s.start();
-
     return 0;
 }
