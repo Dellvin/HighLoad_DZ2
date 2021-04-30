@@ -3,19 +3,15 @@
 //
 
 #include "Server.h"
-
 #include "../conf/config.h"
 
 #include <sstream>
-
 #include <ctime>
 #include <fstream>
 #include <algorithm>
 #include <filesystem>
 #include <unistd.h>
-
-#pragma comment(lib, "Ws2_32.lib")
-#pragma comment(lib, "ws2_32")
+#include <signal.h>
 
 Server::Server() {
     _port = DEFAULT_PORT;
@@ -26,28 +22,29 @@ Server::Server(uint32_t port) {
 }
 
 int Server::start() {
-
-    struct sockaddr_in server;
+//    signal(SIGPIPE,SIGIGN)
+    struct sockaddr_in server{};
     server.sin_addr.s_addr = INADDR_ANY;
     server.sin_port = htons( _port );
     server.sin_family = AF_INET;
     listen_socket=socket(AF_INET, SOCK_STREAM, 0);
     if (listen_socket==-1){
-        std::cerr<< "Error:" <<listen_socket<<std::endl;
+        std::cerr<< "Error creating socket:" <<listen_socket<<std::endl;
         return -1;
     }
     if(bind(listen_socket,(struct sockaddr *)&server , sizeof(server)) < 0) {
-        std::cerr<< "Error:" <<listen_socket<<std::endl;
+        std::cerr<< "Error binding:" <<listen_socket<<std::endl;
         return -1;
     }
     if(listen(listen_socket, SOMAXCONN) < 0){
-        std::cerr<< "Error:" <<listen_socket<<std::endl;
+        std::cerr<< "Error listening:" <<listen_socket<<std::endl;
         return -1;
     }
     int err = mainLoop();
     if (err) {
-        std::cerr << "Error:" << err << std::endl;
+        std::cerr << "Error while handling:" << err << std::endl;
     }
+    return 0;
 }
 
 [[noreturn]] int Server::mainLoop() {
@@ -59,8 +56,7 @@ int Server::start() {
         }
             pthread_t rec;
             pthread_create (&rec, nullptr, Server::handleClient, (void*)&client_socket);
-        i++;
-        std::cout<<i<<": OK"<<std::endl;
+            std::cout<<"OK"<<std::endl;
     }
 }
 
@@ -73,9 +69,9 @@ void *Server::handleClient(void* x) {
     std::string buf;
     buf.resize(BUFF_SIZE);
     std::string resp = "HTTP/1.1 ";
-    std::string contentType = "";
-    size_t err = recv(client_socket, (char *) buf.c_str(), BUFF_SIZE, 0);
-    if (err == 0) {
+    std::string contentType;
+    int64_t err = recv(client_socket, (char *) buf.c_str(), BUFF_SIZE, 0);
+    if (err == -1) {
         std::cerr << "Error while reading for '" << client_socket << "': " << err << std::endl;
         close(client_socket);
         return nullptr;
@@ -105,7 +101,7 @@ int Server::checkMethod(std::string &req) {
 }
 
 void Server::setHeaders(std::string &resp, uint32_t contentLen, std::string &contentType) {
-    time_t now = time(0);
+    time_t now = time(nullptr);
     resp += "Connection: close\r\n";
     resp += "Server: DellvinX (*unix)\r\n";
     std::time_t t = std::time(nullptr);
@@ -194,7 +190,7 @@ std::string Server::getPath(std::string &req) {
     if (path[path.size() - 1] == '/') {
         std::vector<std::string> files;
         try {
-            for (const auto & entry : std::filesystem::directory_iterator(path))
+            for (const auto &entry : std::filesystem::directory_iterator(path))
                 break;
         } catch (...) {
             return path;
@@ -265,9 +261,6 @@ std::string Server::getContent(std::string &path, std::string &read) {
         } while (true);
     }
     file.close();
-    if(read.size()>950000){
-        int a=0;
-    }
     return read;
 }
 

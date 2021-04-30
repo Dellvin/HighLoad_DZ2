@@ -48,10 +48,7 @@ private:
 
 private:
     uint32_t _port;
-    int listen_socket;
-    struct addrinfo* addr;
-    std::vector<std::thread> pool;
-    uint64_t i=0;
+    int listen_socket{};
 };
 
 

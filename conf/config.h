@@ -27,7 +27,7 @@
 
 #endif
 
-#define DEFAULT_PORT 8080
+#define DEFAULT_PORT 8000
 
 #define BUFF_SIZE 2048
 

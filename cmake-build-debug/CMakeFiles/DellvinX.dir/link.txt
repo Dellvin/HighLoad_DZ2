@@ -1,1 +1,1 @@
-/usr/bin/g++  -lstdc++fs;-pthread;-std=c++17 -g   CMakeFiles/DellvinX.dir/main.cpp.o CMakeFiles/DellvinX.dir/server/Server.cpp.o  -o DellvinX 
+/usr/bin/c++ -pthread -g CMakeFiles/DellvinX.dir/main.cpp.o CMakeFiles/DellvinX.dir/server/Server.cpp.o -o DellvinX 

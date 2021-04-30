@@ -1,8 +1,8 @@
 #!/bin/bash
 
-g++ -Wall -g -c -std=c++20 ./main.cpp
-g++ -Wall -g -c -std=c++20 ./server/Server.cpp
+g++ -Wall -g -c -std=c++17 ./main.cpp
+g++ -Wall -g -c -std=c++17 ./server/Server.cpp
 
-g++ main.o Server.o -lstdc++fs -pthread -std=c++20 -o main
+g++ main.o Server.o -pthread -o main
 
 rm *.o

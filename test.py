@@ -19,7 +19,7 @@ class HttpServer(unittest.TestCase):
   port = arg_port
 
   def setUp(self):
-    self.conn = httplib.HTTPConnection(self.host, self.port)
+    self.conn = httplib.HTTPConnection(self.host, self.port, timeout=10)
 
   def tearDown(self):
     self.conn.close()
@@ -178,11 +178,9 @@ class HttpServer(unittest.TestCase):
     status_line = headers.pop(0)
     proto, code, status = status_line.split(b" ")
     h = {}
-    print("Headers:",headers)
     for k, v in enumerate(headers):
       name, value = re.split(b'\\s*:\\s*', v, 1)
       h[name.lower()] = value
-      print("h maloe:",h)
     if int(code) == 200:
       self.assertEqual(int(h[b"content-length"]), 38)
       self.assertEqual(len(body), 0)
